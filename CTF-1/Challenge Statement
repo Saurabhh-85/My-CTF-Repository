@@ -1,0 +1,34 @@
+🧩 CTF Challenge: Hidden in Plain Sight
+
+📌 Category
+Steganography
+
+📊 Difficulty
+Easy / Level-1
+
+🕒 Estimated Time
+5–10 minutes
+
+📦 File Provided
+stego_ctf_1.zip
+
+🧠 Challenge Statement (For Participants)
+You have been provided with a compressed archive containing a single file. Extract the contents of the archive and analyze the file carefully. Although the file appears ordinary, it contains hidden information.
+
+Your task is to:
+Investigate the extracted file;
+Identify any clues or hidden data;
+Extract the flag.
+
+🔎 Hint:
+The first layer may not be readable directly.
+
+🎯 Objective
+Extract the ZIP archive;
+Analyze the contained file;
+Identify the hidden passphrase;
+Extract the concealed data;
+Submit the flag in the correct format.
+
+🏁 Flag Format
+flag{...}
