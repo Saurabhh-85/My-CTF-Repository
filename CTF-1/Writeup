@@ -1,0 +1,49 @@
+🧪 Official Solution Write-Up (For Organizers)
+This challenge evaluates basic steganography and file analysis skills, using common forensic tools and a structured investigation approach.
+
+📦 Step 1: Extract the ZIP File
+Unzip the provided archive:
+unzip stego_ctf_1.zip
+
+📁 Contents extracted:
+Offroad.jpeg
+
+🔍 Step 2: Identify the File
+Verify the file type:
+file Offroad.jpeg
+✔ Confirms the file is a standard JPEG image.
+
+🔎 Step 3: Inspect Metadata
+Analyze the image metadata:
+exiftool Offroad.jpeg
+
+📌 Observation:
+A suspicious Base64-encoded string is found in the Comment field, for example:
+Comment : bGF5ZXIxaGludA==
+This indicates the presence of an encoded hint.
+
+🔐 Step 4: Decode the Hint
+Decode the Base64 string:
+echo bGF5ZXIxaGludA== | base64 -d
+
+📤 Output:
+layer1hint
+✔ This decoded value is the passphrase.
+
+🔓 Step 5: Extract Hidden Data
+Use steghide to extract the concealed file:
+steghide extract -sf Offroad.jpeg
+Enter passphrase:
+layer1hint
+
+📤 Output:
+wrote extracted data to "flag.txt".
+
+🏁 Step 6: Retrieve the Flag
+Display the extracted file:
+cat flag.txt
+
+📄 Output:
+flag{4M3R1C4}
+
+✔ Challenge successfully solved.
