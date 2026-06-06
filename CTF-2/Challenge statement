@@ -1,0 +1,6 @@
+# Echoes of the Hunter
+
+During an internal investigation, Cyberonites recovered a suspicious image from a former member's workstation. The member insisted that the image was "completely harmless" and claimed that anyone looking at it was focusing on the wrong things. Initial analysis revealed several inconsistencies. Investigators believe that clues have been deliberately scattered across multiple layers, but the final payload remains inaccessible. Some information appears to be hidden in plain sight. Others may require a closer look.
+Can you uncover the truth and recover the flag?
+
+Flag Format: flag{...}
