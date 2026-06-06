@@ -18,7 +18,7 @@ Rules:
 -> Put no leading spaces between the names, define the flag only in the format provided. 
 -> Do not include special characters unless they are part of the actual name.
 
-Example: flag{toyotafortuner + johndoe + 0.000,0,000}
+Example: flag{toyotafortuner + johndoe + 0.000,0.000}
 
 Difficulty: Medium - Hard
 Category: OSINT
