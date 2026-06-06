@@ -11,6 +11,6 @@ Most of the participants might enter the co-ordinates of the Palm Beach Road but
 Using more techniques and searching for a look-a-like location as in the YouTube video, we found a path that led to a popular landmark, a park named 'Flamingo Bird Watch' on the Google Maps.
 Now throughout that path or road, we step-by-step checked for the angle and point that fits almost perfectly while capturing the shot.
 So here we got the co-ordinates (not exact, but almost correct that's why I asked for the co-ordinates upto 3 decimal places only).
-The co-ordinates are: 19.010, 73.009 (latitude, longitude).
+The co-ordinates are: 19.010, 73.009 (latitude, longitude) and the location is: Sector 58A, Seawoods, Navi Mumbai, Maharashtra 400706
 
 So, finally the flag comes out to be: flag{rangeroversport + faisalkhan + 19.010,73.009}.
