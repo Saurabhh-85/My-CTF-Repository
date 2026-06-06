@@ -7,7 +7,7 @@ Your task is to identify:
 
 The exact car model shown in the image.
 The name of the content creator who posted it.
-The latitude and longitude co-ordinates (upto 2 decimal places) of the location where the image was taken.
+The latitude and longitude co-ordinates (upto 3 decimal places) of the location where the image was taken.
 
 Combine your findings in the following format:
 
@@ -18,7 +18,7 @@ Rules:
 -> Put no leading spaces between the names, define the flag only in the format provided. 
 -> Do not include special characters unless they are part of the actual name.
 
-Example: flag{toyotafortuner + johndoe + 0.00,0,00}
+Example: flag{toyotafortuner + johndoe + 0.000,0,000}
 
 Difficulty: Medium - Hard
 Category: OSINT
