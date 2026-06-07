@@ -1,0 +1,31 @@
+# The Layered Letter
+Category: Miscellaneous  |  Points: 400 
+Misc | Hard | 400 pts
+Description:
+A secret agent encoded a message in three layers inside a normal-looking text. Peel each layer using a different technique. The final flag uses leet speak — where some letters are replaced with numbers.
+
+No programming needed. Every step can be done with free online tools or just your brain.
+
+Flag format: flag{...}  
+
+The Message:
+[Paragraph 1]
+Snakes often curl under rocks, especially during storms.
+Every creature in nature adapts to survive long winters.
+Calm oceans reveal endless beauty; turtles emerge safely.
+Rare animals thrive only under natural conditions.
+Every wild species holds incredible, natural, generous energy.
+
+[Paragraph 2]
+Silence often carries real exact truths.
+Hidden answers reveal only what silent eyes see.
+Find lies inside no gathered space.
+Think hard every secret; zero options remain empty.
+
+[Paragraph 3]
+Czggp czn ocz nzbmzo rwz, nzxmzo rvt, ndbiy jaa, bzoozm lpdxfgt.
+
+What to do:
+1. Read the first letter of each sentence in paragraph 1 — top to bottom. You'll get a word.
+2. In paragraph 2, read the last letter of each sentence — top to bottom. You'll get a number.
+3. Use that number to Caesar-decode paragraph 3. Then apply leet rules to get the flag.
