@@ -1,0 +1,133 @@
+# Writeup – Last Shift
+Challenge Summary:
+The challenge simulates a forensic investigation involving a departing employee suspected of preparing sensitive data for exfiltration.
+Participants are provided with:
+
+traffic.pcapng
+browser_history.txt
+memory_fragment.raw
+vacation.jpg
+archive.7z
+
+The objective is to recover the final flag hidden within the encrypted archive.
+
+Step 1 – Examine Browser Activity
+Open:
+
+browser_history.txt
+
+Contents:
+
+organization password ideas
+uppolice website
+secure archive encryption
+how to hide data inside image
+tools in kali linux
+
+Findings:
+
+The browser history suggests:
+The employee researched passwords.
+The employee investigated archive encryption.
+The employee searched for methods of hiding data inside images.
+
+This indicates possible steganography.
+
+Step 2 – Analyze Network Traffic
+Open:
+traffic.pcapng using Wireshark.
+Inspect HTTP traffic and follow the captured requests.
+
+Findings:
+Participants should observe activity related to:
+random.jpg
+This confirms the image as a likely point of interest.
+
+Step 3 – Investigate the Image
+The image:
+random.jpg
+appears normal when opened.
+Based on previous clues, the next logical step is to test for steganography.
+
+Run:
+
+steghide info random.jpg
+The output indicates embedded data exists.
+
+Attempt extraction:
+steghide extract -sf random.jpg
+The extraction requires a passphrase.
+
+Step 4 – Determine the Steghide Passphrase
+From the browser history:
+organization password ideas
+the investigator can infer that the employee frequently used password themes related to the organization.
+Through password testing, participants eventually discover:
+kungfupanda
+as the extraction passphrase.
+
+Extraction reveals:
+AES_KEY=uppolice
+
+Step 5 – Analyze Memory Fragment
+Open:
+memory_fragment.raw
+or run:
+strings memory_fragment.raw
+
+Relevant content:
+Archive Password Hint:
+Use the AES key recovered from the image.
+Findings:
+The memory artifact confirms that the recovered AES key should be used elsewhere.
+Recovered key:
+uppolice
+
+Step 6 – Unlock the Archive
+Attempt to open:
+archive.7z
+The archive is password protected.
+Enter: uppolice
+The archive decrypts successfully.
+
+Step 7 – Recover the Flag
+Inside the archive:
+flag.txt
+Contents:
+flag{MY_5YS1EM_C4N_N0T_B3_C0MROM153D!!_&6%4#2!}
+
+Flag:
+flag{MY_5YS1EM_C4N_N0T_B3_C0MROM153D!!_&6%4#2!}
+
+Intended Investigation Flow
+browser_history.txt
+        │
+        ▼
+Steganography Suspicion
+        │
+        ▼
+traffic.pcapng
+        │
+        ▼
+random.jpg
+        │
+        ▼
+Steghide Extraction
+        │
+        ▼
+AES_KEY=uppolice
+        │
+        ▼
+memory_fragment.raw
+        │
+        ▼
+Use AES key as archive password
+        │
+        ▼
+archive.7z
+        │
+        ▼
+flag.txt
+        │
+        ▼
+flag{MY_5YS1EM_C4N_N0T_B3_C0MROM153D!!_&6%4#2!}
