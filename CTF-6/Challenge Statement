@@ -1,0 +1,18 @@
+# Last Shift
+Category: Digital Forensics 
+Level of Difficulty: Medium - Hard
+
+An employee was recently terminated after a routine audit revealed unusual activity shortly before departure from the organization.
+
+The incident response team recovered a small collection of digital artifacts from the employee's workstation, including network traffic captures, 
+browser activity records, memory remnants and a suspicious image file.
+
+Initial analysis suggests that sensitive information may have been collected, encrypted and prepared for exfiltration. 
+
+Your task is to perform a forensic investigation of the provided evidence, reconstruct the employee's actions and determine what information was ultimately hidden. 
+The evidence has been intentionally fragmented across multiple artifacts. 
+A successful investigation will require correlating findings from different sources rather than relying on a single file. 
+
+Recover the final flag. 
+
+Flag Format: flag{}
