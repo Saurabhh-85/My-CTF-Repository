@@ -1,0 +1,13 @@
+# Echoes of the Archivist
+
+A former cryptographer known only as The Archivist left behind a collection of encrypted notes before disappearing. 
+Most of the archive was corrupted, leaving only a single recovered file.
+At first glance the contents seem random, but forensic analysts identified traces of multiple transformation stages. 
+Deep within the recovered metadata was a fragmented sentence:
+
+"I symboloseirá 'uppolice' se éna apó ta typiká kryptografiká hashes BOREI NA chrisimopoiitheí os kleidí gia tin anáktisi tis sostís simaías."
+
+Whether this is a clue, a distraction, or part of the encryption process remains unknown.
+Recover the original message and obtain the flag.
+
+Flag Format: flag{...}
