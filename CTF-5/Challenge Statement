@@ -1,0 +1,7 @@
+# Intercepted Transmission
+
+We picked up a 24-second burst on an open frequency — mostly static and 
+a low ambient hum, but analysts think something's encoded in there. 
+Find the flag.
+
+Flag format: flag{...}
