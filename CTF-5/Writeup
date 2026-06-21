@@ -1,0 +1,52 @@
+# Writeup for Intercepted Transmission:
+
+Step 1 — Initial recon
+Standard first move: check file properties and look for anything embedded before diving into audio analysis.
+
+bashfile transmission.wav
+soxi transmission.wav
+strings -n 8 transmission.wav
+
+This just confirms a normal 24s stereo 44.1kHz PCM WAV — nothing in the headers. Time to dig into the actual audio data.
+
+Step 2 — LSB check (the trap layer)
+LSB steganography is one of the first things any solver checks on raw PCM audio. Pulling the least-significant bit of each sample and decoding as ASCII:
+
+python from scipy.io import wavfile
+rate, data = wavfile.read('transmission.wav')
+ch = data[:, 0]  # left channel
+bits = [s & 1 for s in ch[:5000]]  # scan early samples
+chars = []
+for i in range(0, len(bits), 8):
+    byte = bits[i:i+8]
+    if len(byte) < 8: break
+    val = 0
+    for b in byte:
+        val = (val << 1) | b
+    chars.append(chr(val))
+print(''.join(chars))
+
+This decodes cleanly starting at sample offset 2000:
+flag{not_the_real_one_keep_digging}###END###
+
+It even has a clean delimiter (###END###), which makes it look fully legitimate and complete — a solver who stops here submits the wrong flag. The text itself is the tell, but only if you read it rather than just grabbing the first flag{...} pattern you find.
+
+Step 3 — Spectrogram analysis (the real flag)
+Since the decoy explicitly says "keep digging," the next standard technique for audio stego is visualizing the spectrogram — text/images hidden in frequency-domain data is a classic trick (Aphex Twin did this; it shows up constantly in audio CTF challenges).
+
+python import numpy as np
+import matplotlib.pyplot as plt
+from scipy.io import wavfile
+from scipy.signal import spectrogram
+rate, data = wavfile.read('transmission.wav')
+ch = data[:, 0].astype(np.float64)
+f, t, Sxx = spectrogram(ch, rate, nperseg=2048, noverlap=2000)
+plt.figure(figsize=(22, 6))
+plt.pcolormesh(t, f, 10*np.log10(Sxx + 1e-10), shading='auto', cmap='inferno')
+plt.ylim(1200, 6500)  # the text lives in this band
+plt.savefig('spectrogram.png', dpi=150)
+
+Key detail: a default/low-resolution spectrogram call (small nperseg) renders the text too blurry to read. You need a larger nperseg (2048) with heavy overlap for fine enough frequency resolution — that's the "specific visualization technique" the challenge description hinted at.
+The resulting image shows text rendered directly in the 1200–6500 Hz band between roughly t=8s and t=17s:
+flag{w4v3s_h1dd3n_in_pla1n_s1ght}
+That's the real flag: flag{w4v3s_h1dd3n_in_pla1n_s1ght}
