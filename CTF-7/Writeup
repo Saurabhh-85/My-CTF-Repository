@@ -1,0 +1,6 @@
+The given string in the file can be converted into a valid flag by simply using CyberChef algorithms in a specific order:
+
+From Hex -> From morse code -> AES decrypt with key '88fce618bd3f190d2feed3d0ff581dde' (uppolice/md5) + ECB mode -> ROT 47 -> From Base64
+
+Flag: 
+flag{सुरक्षा आपकी, संकल्प हमारा}
