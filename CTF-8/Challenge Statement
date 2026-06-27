@@ -1,0 +1,24 @@
+=================================================
+                OPERATION BLACK VAULT
+=================================================
+
+Category:
+Reverse Engineering
+
+Difficulty:
+Medium
+
+Scenario:
+A secure credential verification utility has been recovered during a forensic investigation of a compromised government workstation.
+The application validates a confidential access credential before revealing an authorization token used by an internal system.
+Only the executable has been recovered. No source code, debug symbols or documentation are available.
+
+Analyze the binary, determine the correct access credential and retrieve the hidden flag.
+
+Files Provided:
+OperationBlackVault.zip
+
+Flag Format:
+flag{...}
+
+Good luck!
