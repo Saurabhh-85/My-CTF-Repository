@@ -1,0 +1,11 @@
+# THE COFFEE SPOT
+
+Category: OSINT
+Difficulty: Easy - Medium
+
+Challenge Description:
+An image captured during a coffee break is your only source of intelligence. 
+Carefully examine the visual details, correlate the available clues using open-source intelligence (OSINT) techniques
+and identify the exact spot from which the photograph was taken.
+
+Flag Format: flag{}
