@@ -1,0 +1,23 @@
+# Chain of Custody
+
+Category: Forensics
+Difficulty: Medium–Hard
+Flag format: flag{...}
+
+Description:
+An evidence locker intake photo was pulled from the lab's imaging
+station before the chain-of-custody log was filled in. The technician
+swears the real evidence marker is "in there somewhere," but everything
+you've found so far smells like a decoy.
+
+Don't trust the first flag-shaped string you find.
+
+Files:
+evidence.png
+
+## Notes:
+
+- One flag is real. At least one is not.
+- The camera that took this photo stamps something useful into every
+  image it produces — you just have to know where to look, and what
+  to do with it once you find it.
